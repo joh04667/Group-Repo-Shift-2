@@ -37,5 +37,18 @@ router.delete("/deleteUsers/:id", function(request, response) {
   });
 });
 
+router.delete("/destroyusers", function(request, response) {
+  console.log('destroy db');
+  Person.remove({}, function(err) {
+    if(err) {
+      console.log(err);
+      response.sendStatus(500);
+    } else {
+      console.log("Deleted all");
+      response.sendStatus(200);
+    }
+  });
+});
+
 
 module.exports=router;

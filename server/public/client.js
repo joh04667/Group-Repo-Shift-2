@@ -20,13 +20,18 @@ app.controller("YellowController", ["$scope", "$http", function($scope, $http) {
   };
 
   $scope.deleteUser = function(user) {
-    // console.log("Hello", user._id);
-    // This will delete the user from the database, but not from the DOM -> use Array.splice()
     $http.delete("/deleteUsers/" + user._id).then(function(response) {
       console.log("Deleted");
     $scope.updateUsers();
     }); //  $http.delete
   };  //  $scope.deleteUser
+
+  $scope.destroyUsers = function() {
+    $http.delete("/destroyusers").then(function(response) {
+      console.log('kaboom');
+      $scope.updateUsers();
+    });
+  };
 
   $scope.updateUsers();
 

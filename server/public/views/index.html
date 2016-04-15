@@ -7,9 +7,11 @@
     <script src="assets/scripts/client.min.js"></script>
   </head>
   <body ng-controller="YellowController">
+
     <button ng-click="getUsers()">Get Users</button>
+    <button ng-click="destroyUsers()">Nuke Everything</button>
     <div ng-repeat="user in usersList">
-      Name: {{ user.personName }}
+    <h2>Name: {{ user.personName }}</h2>
       Age: {{ user.personAge }}
       Birthplace: {{ user.personBirthplace }}
       Location: {{ user.personLocation }}

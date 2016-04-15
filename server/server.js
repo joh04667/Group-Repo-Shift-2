@@ -5,11 +5,11 @@ var index=require('./routes/index')
 var app=express();
 var bodyParser = require("body-parser");
 
+app.use(express.static('server/public'));
 
 app.use(bodyParser.json());
 app.use('/', index);
 // app.use('/getUsers', getUsers);
-app.use(express.static('server/public'));
 
       //[[[[[[[[[[[[[[[Put database name after localhost:27017/]]]]]]]]]]]]]]]
 var mongoURI = 'mongodb://localhost/yellowTeam/';
